@@ -3,8 +3,7 @@ const colors = require("colors");
 
 const connectDB = async () => {
   try {
-    // Set zona waktu di sini
-    process.env.TZ = "Asia/Jakarta"; // Atur zona waktu sesuai dengan kebutuhan Anda
+    process.env.TZ = "Asia/Jakarta"; 
 
     const conn = await mongoose.connect(
       "mongodb+srv://mevn-store:6R6M1bktghFc4xqv@mevn-store.gfsrlin.mongodb.net/tillJannah?retryWrites=true&w=majority&appName=mevn-store",
