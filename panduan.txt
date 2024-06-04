@@ -34,3 +34,19 @@ default :
 #POST
 /api/users/profile --> Mengupdate data user
 
+
+####
+ARTICLE
+
+default : 
+/api/aticle
+
+#GET
+/api/article/ --> Show all Articles
+
+#GET
+/api/article/:id --> Show article by id
+
+#POST
+/api/article/create --> Create article
+*header Authorization bearer (token)

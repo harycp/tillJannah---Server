@@ -8,6 +8,7 @@ const userRoutes = require("./routes/userRoutes.js");
 const jadwalRoutes = require("./routes/jadwalRoutes.js");
 const kalenderRoutes = require("./routes/kalenderRoutes.js");
 const alquranRoutes = require("./routes/alquranRoutes.js");
+const articleRoutes = require("./routes/articleRoutes.js");
 const { errorHandler, notFound } = require("./middleware/errorMiddleware.js");
 
 dotenv.config();
@@ -27,13 +28,16 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use("/api/users", userRoutes);
+
 app.use("/api/sholat", jadwalRoutes);
 
 app.use("/api/kalender", kalenderRoutes);
 
 app.use("/api/alquran", alquranRoutes);
 
-app.use("/api/users", userRoutes);
+app.use("/api/article", articleRoutes);
+
 // Error Handling middlewares
 app.use(notFound);
 

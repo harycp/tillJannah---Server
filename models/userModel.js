@@ -27,6 +27,12 @@ const userSchema = mongoose.Schema(
       default:
         "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg",
     },
+    ownArticle: [
+      {
+        type: String,
+        default: [], // default value is an empty array
+      },
+    ],
     timeCreated: {
       type: Date,
       default: Date.now,

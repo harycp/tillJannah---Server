@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const colors = require("colors");
+const Surat = require("../models/suratModel");
+const Article = require("../models/articleModel");
 
 const connectDB = async () => {
   try {
@@ -8,16 +10,13 @@ const connectDB = async () => {
 
     const conn = await mongoose.connect(
       "mongodb+srv://mevn-store:6R6M1bktghFc4xqv@mevn-store.gfsrlin.mongodb.net/tillJannah?retryWrites=true&w=majority&appName=mevn-store",
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }
+      {}
     );
     console.log(`MongoDB Connected`.cyan.underline.bold);
 
     // Inisialisasi model Surat
-    const Surat = require("../models/suratModel");
     await new Surat();
+    await new Article();
   } catch (error) {
     console.error(`Error: ${error.message}`.red.bold);
     process.exit(1);
