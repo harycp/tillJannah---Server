@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const connectDB = require("./config/db.js");
 const colors = require("colors");
 const path = require("path");
+const cors = require("cors");
 
 const userRoutes = require("./routes/userRoutes.js");
 const jadwalRoutes = require("./routes/jadwalRoutes.js");
@@ -19,6 +20,7 @@ process.env.TZ = "Asia/Jakarta";
 connectDB();
 
 const app = express(); // main thing
+app.use(cors());
 
 app.use(express.json()); // to accept json data
 
